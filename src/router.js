@@ -8,7 +8,7 @@ import NotFound from "./views/NotFound.vue";
 const routes = [
   {
     path: "/",
-    name: "Blank",
+    name: "Home",
     component: Blank,
     meta: { layout: "empty" },
   },
