@@ -1,7 +1,18 @@
-# Vue 3 + Vite
+# shell
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+```sh
+# https://tailwindcss.com/docs/guides/vite
+yarn create vite shell-layout-routing 
+cd shell-layout-routing
+yarn add -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 
-## Recommended IDE Setup
+```
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## notes
+
+- demonstrates routing + nav shell with active nav item styling
+  - ported layout / vue-router strategy from [vue-board](file:///code/web/nuxt/vue-board/README.ilan.md)
+  - changed to
+    - vite not vue-cli-service
+    - simpler layout = [joshmanders](https://codepen.io/joshmanders/pen/PQQBoR)
