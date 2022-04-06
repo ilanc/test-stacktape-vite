@@ -18,3 +18,7 @@ npx tailwindcss init -p
     - simpler layout
       - ~~[joshmanders](https://codepen.io/joshmanders/pen/PQQBoR)~~ turns out it's cunted in tw3
       - [twui nav simple](https://tailwindui.com/components/application-ui/navigation/navbars#component-aaed25b299f2015d2c4276b98d463cee)
+
+## links
+
+- [nuxt3 version](file:///code/web/nuxt/6-tw-simple-nav/README.md)
