@@ -22,3 +22,12 @@ npx tailwindcss init -p
 ## links
 
 - [nuxt3 version](file:///code/web/nuxt/6-tw-simple-nav/README.md)
+
+## deploy
+
+`TypeError: require(...).internalModuleReadJSON is not a function`
+```sh
+# https://github.com/vercel/pkg#error-requireinternalmodulestat-is-not-a-function
+printenv | grep NODE
+NODE_OPTIONS=--require /home/ilan/.config/Code/User/workspaceStorage/1c102f9cc51a933565f86b40e3698670/ms-vscode.js-debug/bootloader.js  
+```

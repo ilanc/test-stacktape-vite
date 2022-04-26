@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "name": "web-spa-prod",
+    "createdTime": "2022-04-26T18:40:19.177Z",
+    "lastUpdatedTime": "2022-04-26T18:41:02.000Z",
+    "deploymentBucket": "stp-deployment-bucket-324bf2aa",
+    "stackConsole": "https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#stacks/resources?stackId=web-spa-prod",
+    "gitUser": "ilan",
+    "gitCommitSha": "0b19b99",
+    "gitBranch": "master",
+    "imageCount": 0,
+    "functionCount": 1
+  },
+  "customOutputs": {},
+  "resources": {
+    "myBucket": {
+      "resourceType": "bucket",
+      "status": "DEPLOYED",
+      "referenceableParams": {
+        "name": "web-spa-prod-mybucket-324bf2aa",
+        "arn": "arn:aws:s3:::web-spa-prod-mybucket-324bf2aa",
+        "cdnUrl": "https://doj4dyeezz8pe.cloudfront.net",
+        "cdnDomain": "doj4dyeezz8pe.cloudfront.net"
+      },
+      "cloudformationChildResources": {
+        "MyBucketBucket": {
+          "cloudformationResourceType": "AWS::S3::Bucket",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "Name",
+            "Arn",
+            "DomainName",
+            "DualStackDomainName",
+            "RegionalDomainName",
+            "WebsiteURL"
+          ]
+        },
+        "MyBucketBucketPolicy": {
+          "cloudformationResourceType": "AWS::S3::BucketPolicy",
+          "status": "DEPLOYED",
+          "referenceableParams": []
+        },
+        "MyBucketCdnCloudFrontOriginAccessIdentity": {
+          "cloudformationResourceType": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "OriginAccessIdentity",
+            "S3CanonicalUserId"
+          ]
+        },
+        "MyBucketCdnDistribution0": {
+          "cloudformationResourceType": "AWS::CloudFront::Distribution",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "Id",
+            "DomainName"
+          ]
+        }
+      },
+      "links": {
+        "contents": "https://console.aws.amazon.com/s3/buckets/web-spa-prod-mybucket-324bf2aa?region=eu-west-1&tab=objects",
+        "metrics": "https://console.aws.amazon.com/s3/buckets/web-spa-prod-mybucket-324bf2aa?region=eu-west-1&tab=metrics"
+      },
+      "outputs": {}
+    },
+    "stacktapeServiceLambda": {
+      "resourceType": "custom-resource-definition",
+      "status": "DEPLOYED",
+      "referenceableParams": {
+        "logGroupArn": "arn:aws:logs:eu-west-1:366730223589:log-group:/aws/lambda/web-spa-prod-stpService-CR:*",
+        "arn": "arn:aws:lambda:eu-west-1:366730223589:function:web-spa-prod-stpService-CR"
+      },
+      "cloudformationChildResources": {
+        "StacktapeServiceLambdaRole": {
+          "cloudformationResourceType": "AWS::IAM::Role",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "Name",
+            "Arn",
+            "RoleId"
+          ]
+        },
+        "StacktapeServiceLambdaLogGroup": {
+          "cloudformationResourceType": "AWS::Logs::LogGroup",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "Name",
+            "Arn"
+          ]
+        },
+        "StacktapeServiceLambdaCustomResourceFunction": {
+          "cloudformationResourceType": "AWS::Lambda::Function",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "Name",
+            "Arn"
+          ]
+        }
+      },
+      "links": {
+        "logs": "https://eu-west-1.console.aws.amazon.com/cloudwatch/home?region=eu-west-1#logsV2:log-groups/log-group/%252Faws%252Flambda%252Fweb-spa-prod-stpService-CR",
+        "metrics": "https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#functions/web-spa-prod-stpService-CR?tab=monitoring",
+        "console": "https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#functions/web-spa-prod-stpService-CR?tab=testing"
+      },
+      "outputs": {}
+    },
+    "SHARED_GLOBAL": {
+      "resourceType": "SHARED_GLOBAL",
+      "status": "DEPLOYED",
+      "referenceableParams": {},
+      "cloudformationChildResources": {
+        "StpEdgeFunctionsCustomResource": {
+          "cloudformationResourceType": "AWS::CloudFormation::CustomResource",
+          "status": "DEPLOYED",
+          "referenceableParams": []
+        },
+        "StpSensitiveDataCustomResource": {
+          "cloudformationResourceType": "AWS::CloudFormation::CustomResource",
+          "status": "DEPLOYED",
+          "referenceableParams": []
+        },
+        "StpDeploymentBucket": {
+          "cloudformationResourceType": "AWS::S3::Bucket",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "Name",
+            "Arn",
+            "DomainName",
+            "DualStackDomainName",
+            "RegionalDomainName",
+            "WebsiteURL"
+          ]
+        },
+        "StpDeploymentBucketPolicy": {
+          "cloudformationResourceType": "AWS::S3::BucketPolicy",
+          "status": "DEPLOYED",
+          "referenceableParams": []
+        },
+        "StpContainerRepository": {
+          "cloudformationResourceType": "AWS::ECR::Repository",
+          "status": "DEPLOYED",
+          "referenceableParams": [
+            "Name",
+            "Arn"
+          ]
+        },
+        "StpCdnDefStaticCachePolicy": {
+          "cloudformationResourceType": "AWS::CloudFront::CachePolicy",
+          "status": "DEPLOYED",
+          "referenceableParams": []
+        },
+        "StpCdnDefStaticOriginRequestPolicy": {
+          "cloudformationResourceType": "AWS::CloudFront::OriginRequestPolicy",
+          "status": "DEPLOYED",
+          "referenceableParams": []
+        }
+      },
+      "links": {
+        "deployment-bucket-contents": "https://console.aws.amazon.com/s3/buckets/stp-deployment-bucket-324bf2aa?region=eu-west-1&tab=objects"
+      },
+      "outputs": {}
+    }
+  }
+}

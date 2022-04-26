@@ -1,0 +1,12 @@
+serviceName: web-spa
+resources:
+  myBucket:
+    type: bucket
+    properties:
+      directoryUpload:
+        directoryPath: ./dist
+        headersPreset: single-page-app
+      cdn:
+        enabled: true
+        invalidateAfterDeploy: true
+        rewriteRoutesForSinglePageApp: true
